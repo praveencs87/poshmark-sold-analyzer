@@ -1,0 +1,26 @@
+{
+    "title": "Poshmark Sold Listings Analyzer Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "searchUrls": {
+            "title": "Poshmark Search URLs",
+            "type": "array",
+            "description": "List of Poshmark search URLs to scrape (make sure the 'Sold' filter is applied for accurate pricing).",
+            "editor": "requestListSources",
+            "default": [{"url": "https://poshmark.com/search?query=nike+shoes&condition=sold"}],
+            "prefill": [{"url": "https://poshmark.com/search?query=nike+shoes&condition=sold"}]
+        },
+        "maxListings": {
+            "title": "Max Listings to Extract",
+            "type": "integer",
+            "description": "Maximum number of sold listings to extract across all URLs.",
+            "editor": "number",
+            "minimum": 1,
+            "maximum": 50000,
+            "default": 1000,
+            "prefill": 1000
+        }
+    },
+    "required": ["searchUrls"]
+}

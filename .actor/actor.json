@@ -1,0 +1,24 @@
+{
+    "actorSpecification": 1,
+    "name": "poshmark-sold-analyzer",
+    "title": "Poshmark Sold Listings Analyzer",
+    "description": "Extract actual sold prices, original prices, sizes, and brands from Poshmark search results at high speeds to optimize your resale pricing strategy.",
+    "version": "0.0",
+    "input": "./input_schema.json",
+    "dockerfile": "../Dockerfile",
+    "minMemoryMbytes": 256,
+    "maxMemoryMbytes": 1024,
+    "pricingModel": "PAY_PER_EVENT",
+    "pricingEvents": [
+        {
+            "eventName": "apify-actor-start",
+            "pricePerEvent": 0.00005,
+            "description": "Charged once when Actor starts"
+        },
+        {
+            "eventName": "listing-extracted",
+            "pricePerEvent": 0.001,
+            "description": "Charged per Poshmark listing successfully extracted"
+        }
+    ]
+}
