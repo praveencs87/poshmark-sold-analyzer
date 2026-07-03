@@ -6,8 +6,8 @@
     "version": "0.0",
     "input": "./input_schema.json",
     "dockerfile": "../Dockerfile",
-    "minMemoryMbytes": 256,
-    "maxMemoryMbytes": 1024,
+    "minMemoryMbytes": 1024,
+    "maxMemoryMbytes": 4096,
     "pricingModel": "PAY_PER_EVENT",
     "pricingEvents": [
         {
@@ -19,6 +19,24 @@
             "eventName": "listing-extracted",
             "pricePerEvent": 0.001,
             "description": "Charged per Poshmark listing successfully extracted"
+        },
+        {
+            "eventName": "lead-extracted",
+            "pricePerEvent": 0.005,
+            "description": "Charged per lead extracted"
         }
-    ]
+    ],
+    "isPublic": true,
+    "seoTitle": "Poshmark Sold Listings Analyzer | Apify Actor",
+    "seoDescription": "Extract actual sold prices, original prices, sizes, and brands from Poshmark search results at high speeds to optimize your resale pricing strategy.",
+    "categories": [
+        "BUSINESS",
+        "DATA_EXTRACTION",
+        "LEAD_GENERATION"
+    ],
+    "defaultRunOptions": {
+        "build": "latest",
+        "timeoutSecs": 1800,
+        "memoryMbytes": 4096
+    }
 }
